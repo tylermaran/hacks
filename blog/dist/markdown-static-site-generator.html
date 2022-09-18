@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+        <!-- Base meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Making a stupid simple static site generator" />
+        <meta name="language" content="english" />
+        <meta name="title" content="markdown ssg" />
+
+        <!-- OpenGraph -->
+        <meta property="og:description" content="Making a stupid simple static site generator" />
+        <meta property="og:image" content="cat.jpeg" />
+        <meta property="og:site_name" content="Rysolv" />
+        <meta property="og:title" content=markdown ssg />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rysolv.com/blog/markdown-static-site-generator.html" />
+
+        <!-- Twitter -->
+        <meta name="twitter:description" content="Making a stupid simple static site generator" />
+        <meta name="twitter:domain" content="https://rysolv.com/blog/markdown-static-site-generator.html" />
+        <meta name="twitter:image" content="cat.jpeg" />
+        <meta name="twitter:title" content="markdown ssg" />
+
+        <link rel="stylesheet" href="style.css">
+        <title>markdown ssg</title>
+</head>
+
+<body>
+        <h2 id="writing-markdown-for-fun-and-profit">Writing markdown for fun and profit</h2>
+        <p>I&#39;m a blog written in markdown. I can do lots of cool things.</p>
+        <p>Are the paragraphs too close now?</p>
+        <h3 id="smaller-headers">smaller headers</h3>
+        <p>We can make lists:</p>
+        <ul>
+                <li>something</li>
+                <li>like</li>
+                <li>this</li>
+        </ul>
+        <p>what does code look like?</p>
+        <pre><code>1   // im a block of code
+2   // hello world!
+3   const whatever = () =&gt; {
+4       console.log(&#39;Ooh nice indentions&#39;);
+5   }
+</code></pre>
+        <p>There&#39;s even some table functions</p>
+        <table>
+                <thead>
+                        <tr>
+                                <th>Syntax</th>
+                                <th>Description</th>
+                        </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                                <td>Header</td>
+                                <td>Title</td>
+                        </tr>
+                        <tr>
+                                <td>Paragraph</td>
+                                <td>Text</td>
+                        </tr>
+                </tbody>
+        </table>
+        <p>I probably need one with some images to demo
+                SOmething sometthing something</p>
+        <p>Why markdown?</p>
+        <p>Well I&#39;m in a code editor all day anyway. I like the syntax.</p>
+        <p>And the indention is really nice. Especially when I want to provide code snippits. Which I do a lot of when I
+                write tutorials. Since I&#39;m staying in VS code the whole time I can just copy over snippits, and I
+                don&#39;t have to worry about the formatting being wrong.</p>
+        <pre><code>// Convert Meta tags to object
+const metaObj = meta.split(/\n/).reduce((acc, el) =&gt; {
+if (el.length) {
+const [key, value] = el.split(&#39;:&#39;);
+acc[key] = value.trim();
+}
+return acc;
+}, {});
+</code></pre>
+        <p>It&#39;s not the perfect site generator. But I think it&#39;s the best you can do in 100 lines of js</p>
+
+</body>
+
+</html>

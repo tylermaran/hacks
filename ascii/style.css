@@ -1,0 +1,28 @@
+body {
+    color: white;
+    background-color: black;
+}
+
+button {
+    color: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ascii {
+    font-family: monospace;
+    font-size: 1.2rem;
+    white-space: pre;
+    user-select: none;
+    display: inline-block;
+    margin: 0;
+}
+
+.button {
+    color: green;
+    cursor: pointer;
+}
+.button:hover {
+    color: rgb(6, 187, 6);
+}

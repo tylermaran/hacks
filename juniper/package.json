@@ -1,0 +1,21 @@
+{
+	"name": "juniper",
+	"version": "1.0.0",
+	"description": "interview project",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "test"
+	},
+	"keywords": [
+		"juniper"
+	],
+	"author": "tyler",
+	"license": "ISC",
+	"dependencies": {
+		"dotenv": "16.0.1",
+		"express": "4.18.1",
+		"haversine": "1.1.1",
+		"node-fetch": "2.6.6"
+	}
+}

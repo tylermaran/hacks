@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jump</title>
+
+    <style>
+        html,
+        body {
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        #gary {
+            font-size: 40px;
+            font-family: monospace;
+            position: fixed;
+            transition: all .15s ease 0s;
+        }
+
+        #ground {
+            width: 100%;
+            height: 1px;
+            border-top: 2px solid black;
+            position: fixed;
+            top: 550px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='gary'>0</div>
+    <div id='ground'></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>

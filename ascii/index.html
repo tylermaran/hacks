@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="target"></div>
+
+    <script>
+
+        const target = document.getElementById('target');
+        const button = generateButton({
+            label: 'YOOOOOOOOOO',
+            onClick: () => { console.log('Hello world'); }
+        });
+        target.append(button)
+
+
+        const button2 = generateButton({
+            label: 'YOLO IM A BUTTON',
+            onClick: () => { console.log('Hello world'); }
+        });
+        target.append(button2)
+
+
+        // Return HTML
+        function generateButton({ label, onClick, ...restprops }) {
+            const baseButton = generateString(label)
+            const button = document.createElement('span');
+            const pre = document.createElement('pre');
+
+            pre.classList.add('ascii');
+            pre.innerHTML = baseButton;
+            button.classList.add('button');
+            button.append(pre);
+
+            button.onclick = onClick;
+
+            button.onmousedown = () => {
+                pre.innerHTML = baseButton
+                    .replace(/╔/g, '┌')
+                    .replace(/║/g, '╎')
+                    .replace(/╚/g, '└')
+                    .replace(/═/g, '─')
+                    .replace(/╗/g, '┐')
+                    .replace(/╝/g, '┘');
+            }
+            button.onmouseup = () => {
+                pre.innerHTML = baseButton;
+            }
+            return button;
+        }
+
+        // Generate ASCII string for button
+        function generateString(string) {
+            let top = '╔' + '═'.repeat(string.length + 2) + '╗';
+            let center = '║ ' + string + ' ║';
+            let bottom = '╚' + '═'.repeat(string.length + 2) + '╝';
+            return `${top}\n${center}\n${bottom}`;
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- 
+┌───────────────────┴───────────────────┐
+│ GET /PROJECT/{PROJECTID}              │
+└───────────────────────────────────────┘ 
+-->
+
+<!-- 
+╔───────────╗
+╎   START   ╎
+╚───────────╝
+
+╔═══════════╗
+║   START   ║
+╚═══════════╝
+ -->

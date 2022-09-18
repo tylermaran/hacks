@@ -1,0 +1,112 @@
+html {
+    background-color: rgb(24, 24, 24);
+}
+
+.hex:before {
+    border-color: inherit;
+    border-bottom: 30px solid;
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    content: "";
+    height: 0;
+    position: absolute;
+    top: -30px;
+    width: 0; 
+}
+
+.hex {
+    background-color: #6C6;
+    border-color: #6C6;
+    height: 60px;
+    position: relative;
+    width: 104px;
+    margin: 0 2px;
+    opacity: .7;
+}
+
+.hex:after {
+    border-left: 52px solid transparent;
+    border-right: 52px solid transparent;
+    border-top: 30px solid;
+    bottom: -30px;
+    content: "";
+    position: absolute;
+    width: 0;
+}
+
+
+
+.hex:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+#grid {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 50px 80px;
+    border: 1px solid black;
+}
+
+#dashboard {
+    border: 1px solid black;
+    color: white;
+    padding: 50px;
+    width: 300px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    margin: 33px 0 0;
+}
+
+.shift {
+    margin-left: 54px;
+}
+
+
+/* Colors */
+
+.grass {
+    background-color: #6C6; 
+}
+
+.grass:after, .grass:before {
+    border-top-color: #6C6;
+    border-bottom-color: #6C6;
+}
+
+.mountain {
+    background-color: #969696; 
+}
+
+.mountain:after, .mountain:before {
+    border-top-color: #969696;
+    border-bottom-color: #969696;
+}
+
+.water {
+    background-color: #0718ff; 
+}
+
+.water:after, .water:before {
+    border-top-color: #0718ff;
+    border-bottom-color: #0718ff;
+}
+
+.ice {
+    background-color: #6d9af4; 
+}
+
+.ice:after, .ice:before {
+    border-top-color: #6d9af4;
+    border-bottom-color: #6d9af4;
+}

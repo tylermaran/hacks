@@ -1,0 +1,334 @@
+{
+	"lastModified": "2022-06-09T18:20:03.485Z",
+	"facilities": [
+		{
+			"bin": "2003015",
+			"name": "Morrisania Diagnostic & Treatment Center",
+			"latitude": "40.835906387949",
+			"longitude": "-73.920034037019",
+			"distance": 0
+		},
+		{
+			"bin": "2009891",
+			"name": "Health Center at Tremont",
+			"latitude": "40.844000208275",
+			"longitude": "-73.894548724404",
+			"distance": 2.325152002764543
+		},
+		{
+			"bin": "1060431",
+			"name": "Drew Hamilton Houses Health Center",
+			"latitude": "40.822139979421",
+			"longitude": "-73.942389748859",
+			"distance": 2.4251126334391917
+		},
+		{
+			"bin": "1080027",
+			"name": "Dyckman Clinica De Las Americas",
+			"latitude": "40.861957938597",
+			"longitude": "-73.92380763599",
+			"distance": 2.9141375213679286
+		},
+		{
+			"bin": "1053899",
+			"name": "Harlem Hospital Center",
+			"latitude": "40.814275217502",
+			"longitude": "-73.940602831291",
+			"distance": 2.9632226191134623
+		},
+		{
+			"bin": "1084118",
+			"name": "Grant Houses Clinic",
+			"latitude": "40.815255660488",
+			"longitude": "-73.958430492697",
+			"distance": 3.9636420217199033
+		},
+		{
+			"bin": "2017787",
+			"name": "North Central Bronx Hospital",
+			"latitude": "40.880463372456",
+			"longitude": "-73.881592877502",
+			"distance": 5.915984366977588
+		},
+		{
+			"bin": "1083929",
+			"name": "Metropolitan Hospital Center",
+			"latitude": "40.784557024105",
+			"longitude": "-73.943795653643",
+			"distance": 6.0498673967528145
+		},
+		{
+			"bin": "2097550",
+			"name": "Jacobi Medical Center",
+			"latitude": "40.857397104611",
+			"longitude": "-73.846571204087",
+			"distance": 6.625283077314992
+		},
+		{
+			"bin": "2057204",
+			"name": "Gunhill Health Center",
+			"latitude": "40.874626006887",
+			"longitude": "-73.857887416826",
+			"distance": 6.771693330761593
+		},
+		{
+			"bin": "1085548",
+			"name": "Coler-Goldwater Specialty Hospital and Nursing Facility/Goldwater Campus",
+			"latitude": "40.761976486226",
+			"longitude": "-73.949999674945",
+			"distance": 8.598900836842095
+		},
+		{
+			"bin": "1040750",
+			"name": "Coler-Goldwater Specialty Hospital and Nursing Facility/Coler Campus",
+			"latitude": "40.761976486226",
+			"longitude": "-73.949999674945",
+			"distance": 8.598900836842095
+		},
+		{
+			"bin": "4042887",
+			"name": "Junction Boulevard Child Health Clinic",
+			"latitude": "40.751630739367",
+			"longitude": "-73.883612545283",
+			"distance": 9.859849923308884
+		},
+		{
+			"bin": "4430994",
+			"name": "Woodside Houses Child Health Clinic",
+			"latitude": "40.745193764481",
+			"longitude": "-73.90484714408",
+			"distance": 10.167488541098129
+		},
+		{
+			"bin": "4047629",
+			"name": "Corona Child Health Clinic",
+			"latitude": "40.749678220374",
+			"longitude": "-73.853040688577",
+			"distance": 11.1237874852361
+		},
+		{
+			"bin": "1086515",
+			"name": "Bellevue Hospital Center",
+			"latitude": "40.73962320748",
+			"longitude": "-73.976572846645",
+			"distance": 11.716658737519676
+		},
+		{
+			"bin": "3064836",
+			"name": "Greenpoint Community Health Center",
+			"latitude": "40.729665609686",
+			"longitude": "-73.954045460054",
+			"distance": 12.155557253085458
+		},
+		{
+			"bin": "3324885",
+			"name": "Jonathan Williams Houses Child Health Clinic",
+			"latitude": "40.715367609829",
+			"longitude": "-73.956165823569",
+			"distance": 13.744275161789853
+		},
+		{
+			"bin": "3069418",
+			"name": "Williamsburg Child Health Clinic",
+			"latitude": "40.712103238036",
+			"longitude": "-73.943994071543",
+			"distance": 13.91334743192517
+		},
+		{
+			"bin": "1007180",
+			"name": "Judson Health Center",
+			"latitude": "40.721735692317",
+			"longitude": "-73.995719412648",
+			"distance": 14.204941286510053
+		},
+		{
+			"bin": "1078039",
+			"name": "Baruch Houses Family Health Center",
+			"latitude": "40.716367017869",
+			"longitude": "-73.980135660503",
+			"distance": 14.222996149493628
+		},
+		{
+			"bin": "1003224",
+			"name": "Gouverneur Healthcare Services",
+			"latitude": "40.712841397448",
+			"longitude": "-73.987598534724",
+			"distance": 14.819793746391385
+		},
+		{
+			"bin": "4083018",
+			"name": "Ridgewood Communicare Clinic",
+			"latitude": "40.702949636008",
+			"longitude": "-73.90543308997",
+			"distance": 14.835160060839222
+		},
+		{
+			"bin": "3048341",
+			"name": "Woodhull Medical and Mental Health Center",
+			"latitude": "40.70052661478",
+			"longitude": "-73.941643858765",
+			"distance": 15.163147970798061
+		},
+		{
+			"bin": "1077421",
+			"name": "Smith Communicare Health Center",
+			"latitude": "40.711969729879",
+			"longitude": "-73.997542215578",
+			"distance": 15.248530829308532
+		},
+		{
+			"bin": "3324728",
+			"name": "Sumner Avenue Houses Child Health Clinic",
+			"latitude": "40.697855287659",
+			"longitude": "-73.941006610822",
+			"distance": 15.45185803558553
+		},
+		{
+			"bin": "3076115",
+			"name": "Bushwick Communicare",
+			"latitude": "40.694738427187",
+			"longitude": "-73.919223916666",
+			"distance": 15.697309311990535
+		},
+		{
+			"bin": "3324972",
+			"name": "Eleanor Roosevelt Houses Child Health Clinic",
+			"latitude": "40.69392371549",
+			"longitude": "-73.935456875218",
+			"distance": 15.841093631696848
+		},
+		{
+			"bin": "3321871",
+			"name": "Lafayette Houses Child Health Clinic",
+			"latitude": "40.690366628996",
+			"longitude": "-73.959782659483",
+			"distance": 16.525902084076723
+		},
+		{
+			"bin": "3058406",
+			"name": "Fort Greene Child Health Clinic",
+			"latitude": "40.692053402323",
+			"longitude": "-73.982413019989",
+			"distance": 16.83635160060424
+		},
+		{
+			"bin": "3080067",
+			"name": "Bushwick Community Health Center",
+			"latitude": "40.684303566262",
+			"longitude": "-73.909082385178",
+			"distance": 16.882681391230317
+		},
+		{
+			"bin": "4442433",
+			"name": "Queens Hospital Center",
+			"latitude": "40.71311535449",
+			"longitude": "-73.792820999789",
+			"distance": 17.354378255530868
+		},
+		{
+			"bin": "4442431",
+			"name": "Queens Hospital Center",
+			"latitude": "40.71311535449",
+			"longitude": "-73.792820999789",
+			"distance": 17.354378255530868
+		},
+		{
+			"bin": "4208836",
+			"name": "Parsons Communicare Clinic",
+			"latitude": "40.71311535449",
+			"longitude": "-73.792820999789",
+			"distance": 17.354378255530868
+		},
+		{
+			"bin": "3036147",
+			"name": "Crown Heights Child Health Clinic",
+			"latitude": "40.673492222873",
+			"longitude": "-73.935701697386",
+			"distance": 18.107785818860265
+		},
+		{
+			"bin": "3083929",
+			"name": "East New York Diagnostic & Treatment Center",
+			"latitude": "40.671962495107",
+			"longitude": "-73.89520529393",
+			"distance": 18.349302555137637
+		},
+		{
+			"bin": "3089620",
+			"name": "Sutter Avenue Child Health Clinic",
+			"latitude": "40.67189903622",
+			"longitude": "-73.878318817943",
+			"distance": 18.57220848647459
+		},
+		{
+			"bin": "3081765",
+			"name": "Brownsville Child Health Clinic",
+			"latitude": "40.664911170498",
+			"longitude": "-73.911410916321",
+			"distance": 19.02767061358516
+		},
+		{
+			"bin": "3327674",
+			"name": "Dr. Susan Smith McKinney Nursing and Rehabilitation Center",
+			"latitude": "40.66005451681",
+			"longitude": "-73.939761495742",
+			"distance": 19.624326839771292
+		},
+		{
+			"bin": "3327711",
+			"name": "Kings County Hospital Center",
+			"latitude": "40.655761808605",
+			"longitude": "-73.944662615537",
+			"distance": 20.13832640944098
+		},
+		{
+			"bin": "4264631",
+			"name": "South Queens Community Health Center",
+			"latitude": "40.676945262114",
+			"longitude": "-73.775306901692",
+			"distance": 21.471640773519894
+		},
+		{
+			"bin": "4279935",
+			"name": "Springfield Gardens Medical Center",
+			"latitude": "40.669711181226",
+			"longitude": "-73.750873933285",
+			"distance": 23.335516034355354
+		},
+		{
+			"bin": "5013729",
+			"name": "Stapleton Child Health Clinic",
+			"latitude": "40.626576449488",
+			"longitude": "-74.076994470087",
+			"distance": 26.77143274566772
+		},
+		{
+			"bin": "3337274",
+			"name": "Coney Island Hospital",
+			"latitude": "40.586645433957",
+			"longitude": "-73.965830115778",
+			"distance": 27.98404483554148
+		},
+		{
+			"bin": "3188417",
+			"name": "Ida G. Israel Community Health Center",
+			"latitude": "40.578488319967",
+			"longitude": "-73.989497148121",
+			"distance": 29.21629979495571
+		},
+		{
+			"bin": "5110626",
+			"name": "Mariner's Harbor Houses Child Health Clinic",
+			"latitude": "40.62609762251",
+			"longitude": "-74.157474896698",
+			"distance": 30.733634352013404
+		},
+		{
+			"bin": "5141697",
+			"name": "Sea View Hospital Rehabilitation Center & Home",
+			"latitude": "40.597953866387",
+			"longitude": "-74.131766325901",
+			"distance": 31.91417019375061
+		}
+	]
+}

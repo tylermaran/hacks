@@ -1,0 +1,56 @@
+h1 {
+    font-size: 1.5rem;
+}
+
+body {
+    background-color: rgb(15, 15, 15);
+    color: rgb(239, 239, 239);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10rem auto 0;
+    width: 50%;
+}
+
+textarea {
+    background-color: rgb(24, 24, 24);
+    border: 0px;
+    color: white;
+    font-size: 1.2rem;
+    min-height: 500px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#buttonRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    align-self: end;
+    background: rgb(5, 5, 5);
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    margin: .5rem 0;
+    min-width: 20%;
+    padding: 0.5rem;
+}
+
+button:hover {
+    background: rgb(0, 0, 0);
+}
+
+button:active {
+    background: rgb(5, 5, 5);
+    border-color: rgb(20, 20, 20);
+}
+
+@media only screen and (max-width: 700px) {
+    body {
+        width: 95%;
+        margin: 3rem auto 0;
+    }
+}

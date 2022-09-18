@@ -1,0 +1,16 @@
+{
+	"name": "Captain's Log",
+	"short_name": "CLOG",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "rgb(15, 15, 15)",
+	"theme_color": "rgb(15, 15, 15)",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/assets/icons/64.png",
+			"type": "image/png",
+			"sizes": "64x64"
+		}
+	]
+}

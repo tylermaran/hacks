@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D</title>
+    <style>
+        #map {
+            width: 75%;
+            margin: 0 0 0 10%;
+        }
+
+        .pixel {
+            /* display: flex; */
+            margin: 0;
+            background-color: green;
+            height: 10px;
+            width: 10px;
+            border: 1px solid rgb(1, 110, 1);
+        }
+
+        .wall {
+            background-color: rgb(143, 143, 143);
+            border: 1px solid gray;
+        }
+
+        .char {
+            background-color: rgb(212, 20, 20);
+            border: 1px solid rgb(0, 0, 0);
+        }
+
+        .row {
+            display: flex;
+            margin: 0;
+            height: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="index.js"></script>
+</body>
+
+</html>
