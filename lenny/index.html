@@ -21,6 +21,15 @@
     </div>
 
     <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker
+                    .register('/serviceworker.js')
+                    .then((res) => console.log('service worker registered'))
+                    .catch((err) => console.log('service worker not registered', err));
+            });
+        }
+
         const textArea = document.getElementById('text');
         const dateArea = document.getElementById('timestamp');
         const saveButton = document.getElementById('saveButton');
@@ -41,17 +50,18 @@
         // Handle saving
         const handleSave = () => {
             console.log(parsedLog);
-            if (parsedLog.length) {
-                const lastEntry = parsedLog[parsedLog.length - 1];
-                if (new Date(lastEntry.timestamp).getDay() === new Date().getDay()) {
-                    parsedLog[parsedLog.length - 1].entry = textArea.value;
-                }
-                else {
-                    console.log("not today's entry");
-                    const formatted = { entry: textArea.value, timestamp: new Date() }
-                    parsedLog.push(formatted);
-                }
+            const lastEntry = parsedLog[parsedLog.length - 1];
+            if (
+                lastEntry &&
+                new Date(lastEntry.timestamp).getDay() === new Date().getDay()
+            ) {
+                parsedLog[parsedLog.length - 1].entry = textArea.value;
             }
+            else {
+                const formatted = { entry: textArea.value, timestamp: new Date() }
+                parsedLog.push(formatted);
+            }
+
             window.localStorage.setItem('log', JSON.stringify(parsedLog));
         }
 
