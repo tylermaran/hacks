@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brain Dump</title>
+    <title>Stardate</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Captain's log</h1>
+    <h1>stardate</h1>
     <div id="container">
         <div id="timestamp">Today</div>
         <textarea type="input" id="text"></textarea>
@@ -34,6 +34,7 @@
         const dateArea = document.getElementById('timestamp');
         const saveButton = document.getElementById('saveButton');
         const exportButton = document.getElementById('exportButton');
+        let editTimeout;
 
         const localLog = window.localStorage.getItem('log');
 
@@ -41,7 +42,7 @@
         if (localLog && localLog !== 'undefined') {
             parsedLog = JSON.parse(localLog);
             parsedLog.forEach(el => {
-                if (new Date(el.timestamp).getDay() === new Date().getDay()) {
+                if (new Date(el.timestamp).toDateString() === new Date().toDateString()) {
                     textArea.value = el.entry;
                 }
             });
@@ -49,11 +50,10 @@
 
         // Handle saving
         const handleSave = () => {
-            console.log(parsedLog);
             const lastEntry = parsedLog[parsedLog.length - 1];
             if (
                 lastEntry &&
-                new Date(lastEntry.timestamp).getDay() === new Date().getDay()
+                new Date(lastEntry.timestamp).toDateString() === new Date().toDateString()
             ) {
                 parsedLog[parsedLog.length - 1].entry = textArea.value;
             }
@@ -66,7 +66,6 @@
         }
 
         // Handle typing
-        // @TODO: switch to save after 1-2 seconds of inactivity after typing
         const handleKeyPress = (e) => {
             if (e.code === 'Tab') {
                 e.preventDefault();
@@ -74,12 +73,18 @@
             }
             if (e.ctrlKey && e.code === 'KeyS') {
                 e.preventDefault();
-                handleSave()
+                handleSave();
             }
             if (e.ctrlKey && e.code === 'Enter') {
                 e.preventDefault();
-                handleSave()
+                handleSave();
             }
+
+            // Autosave after 2 seconds of inactivity
+            clearTimeout(editTimeout);
+            editTimeout = setTimeout(() => {
+                handleSave()
+            }, 2000);
         }
 
         // Export all entries
