@@ -19,11 +19,11 @@ Run the following:
 
 ### Endpoints
 
-#### /ping
+#### GET: /ping
 
 returns `pong`
 
-#### /prompt
+#### POST: /prompt body: { prompt: "Say hello world" }
 
 Returns conversation log of your prompts and gpt responses from the OpenAI completion endpoint (https://beta.openai.com/docs/api-reference/completions)
 
