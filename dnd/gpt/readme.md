@@ -39,3 +39,7 @@ Ex:
  'response: The Lord of the Rings movies are a trilogy of fantasy movies based on the novel by J. R. R. Tolkien.',
 ]
 ```
+
+#### POST: /clear
+
+Clears the existing conversation log

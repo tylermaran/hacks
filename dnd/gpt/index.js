@@ -46,7 +46,7 @@ app.get('/', (req, res, next) => {
 });
 
 // Prompt
-app.post('/', async (req, res, next) => {
+app.post('/prompt', async (req, res, next) => {
 	const { prompt } = req.body;
 	conversationLog.push(`prompt: ${prompt}`);
 	const result = await makeARequest();
@@ -54,6 +54,12 @@ app.post('/', async (req, res, next) => {
 		result.includes('response: ') ? result : `response: ${result}`
 	);
 	return res.status(200).json({ conversation: conversationLog });
+});
+
+// Delete the existing conversation log
+app.post('/clear', (req, res, next) => {
+	conversationLog.splice(0, conversationLog.length);
+	return res.status(200).send('conversation cleared');
 });
 
 // 404s
