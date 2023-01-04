@@ -1,0 +1,14 @@
+{
+  "name": "auth_node",
+  "version": "1.0.0",
+  "description": "node client for authawk",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "open": "^8.4.0"
+  }
+}
