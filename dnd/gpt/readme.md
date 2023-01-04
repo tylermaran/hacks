@@ -1,6 +1,23 @@
 # GPTDND
 
-### endpoints
+### Getting Started
+
+Create a `.env` file with the following:
+
+```
+OPENAI_API_KEY = SECRETKEY12345
+ORG = MYORG
+```
+
+Read about authentication here: https://beta.openai.com/docs/api-reference/authentication
+
+Run the following:
+
+`npm install`
+
+`node index.js`
+
+### Endpoints
 
 #### /ping
 
