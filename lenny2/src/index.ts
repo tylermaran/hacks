@@ -1,9 +1,9 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import { Twilio } from 'twilio';
 
-// Download the helper library from https://www.twilio.com/docs/node/install
-// Set environment variables for your credentials
+import { SmsWebhookRequest } from './types';
+
 const accountSid = process.env.TWILIO_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 
@@ -11,40 +11,52 @@ const client = new Twilio(accountSid, authToken);
 const app = express();
 const prisma = new PrismaClient();
 
-app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
+const findOrCreateUserByPhoneNumber = async (phoneNumber: string) => {
+	// Parse out only numbers
+	const parsedNumber = phoneNumber.replace(/\D/g, '');
+
+	// Find the user by phone number
+	const existingUser = await prisma.users.findFirst({
+		where: {
+			phone_number: parsedNumber,
+		},
+	});
+
+	// If user already exists, return it
+	if (existingUser) {
+		return existingUser;
+	}
+
+	// Otherwise, create a new user
+	return await prisma.users.create({
+		data: {
+			phone_number: parsedNumber,
+		},
+	});
+};
+
+// Send a message to a specific number
 app.post('/new-message', async (req, res) => {
 	const { phoneNumber, message } = req.body;
 
-	console.log('phone number: ', phoneNumber);
-	console.log('message: ', message);
+	try {
+		const user = await findOrCreateUserByPhoneNumber(phoneNumber);
 
-	client.messages
-		.create({
+		const messageResponse = await client.messages.create({
 			body: message,
 			from: '+18335674388',
-			to: '+16782319992',
-		})
-		.then((message) => console.log(message.sid));
-
-	try {
-		const user = await prisma.users.findFirst({
-			where: {
-				phone_number: phoneNumber,
-			},
+			to: user.phone_number,
 		});
 
-		console.log('found user');
-		console.log(user);
-
-		if (!user) {
-			const newUser = await prisma.users.create({
-				data: {
-					phone_number: phoneNumber,
-				},
-			});
-			console.log('User created:', newUser);
-		}
+		await prisma.messages.create({
+			data: {
+				body: messageResponse.body,
+				user_id: user.id,
+				metadata: JSON.stringify(messageResponse),
+			},
+		});
 
 		res.status(201).json({ message: 'message received' });
 	} catch (error) {
@@ -52,6 +64,49 @@ app.post('/new-message', async (req, res) => {
 		res.status(500).json({ message: 'Error creating user', error });
 	}
 });
+
+// Receive a message and respond
+app.post(
+	'/sms',
+	async (req: Request<{}, {}, SmsWebhookRequest>, res: Response) => {
+		console.log('NEW SMSSSS ', req.body.From);
+		console.log(req.body.Body);
+		try {
+			// Find or create user by phone number
+			const user = await findOrCreateUserByPhoneNumber(req.body.From);
+
+			// Add incoming message to message logs
+			await prisma.messages.create({
+				data: {
+					body: req.body.Body,
+					user_id: user.id,
+					metadata: JSON.stringify(req.body),
+				},
+			});
+
+			// Send return message
+			const messageResponse = await client.messages.create({
+				body: 'nice to meet you',
+				from: '+18335674388',
+				to: user.phone_number,
+			});
+
+			// Add Lenny's response to message logs
+			await prisma.messages.create({
+				data: {
+					body: messageResponse.body,
+					user_id: user.id,
+					metadata: JSON.stringify(messageResponse),
+				},
+			});
+
+			res.status(201).json({ message: 'message received' });
+		} catch (error) {
+			console.error('Error creating user:', error);
+			res.status(500).json({ message: 'Error creating user', error });
+		}
+	}
+);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
