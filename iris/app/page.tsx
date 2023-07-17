@@ -4,10 +4,11 @@ import React, { useRef, useState } from 'react';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import WaitlistButton from './Waitlist';
+import * as THREE from 'three';
 
 const GlassesModel = () => {
 	const gltf = useLoader(GLTFLoader, '/textured_attempt_2.glb');
-	const mesh = useRef();
+	const mesh = useRef<THREE.Object3D>(null);
 
 	const fastSpeed = 0.1;
 	const slowSpeed = 0.002;
@@ -35,19 +36,28 @@ const GlassesModel = () => {
 		}
 	});
 
-	gltf.scene.traverse((child) => {
-		if (child.isMesh && child.material.name === 'glass') {
-			// Set transparent to true
-			child.material.transparent = true;
+	gltf.scene.traverse((child: THREE.Object3D) => {
+		if (
+			'isMesh' in child &&
+			'material' in child &&
+			child.material instanceof THREE.Material
+		) {
+			const mesh = child as THREE.Mesh;
+			const material = mesh.material as THREE.MeshStandardMaterial;
 
-			// Set the opacity
-			child.material.opacity = 0.05;
+			if (material.name === 'glass') {
+				// Set transparent to true
+				material.transparent = true;
 
-			// Set depthWrite to false for transparent objects
-			child.material.depthWrite = false;
+				// Set the opacity
+				material.opacity = 0.05;
 
-			// Set a higher render order for the lenses
-			child.renderOrder = 1;
+				// Set depthWrite to false for transparent objects
+				material.depthWrite = false;
+
+				// Set a higher render order for the lenses
+				mesh.renderOrder = 1;
+			}
 		}
 	});
 
@@ -113,7 +123,7 @@ const Glasses = () => {
 				<pointLight position={[10, 10, 10]} />
 				<GlassesModel />
 			</Canvas>
-			<WaitlistButton style={{ width: '100%', height: '20%' }} />
+			<WaitlistButton />
 		</div>
 	);
 };
